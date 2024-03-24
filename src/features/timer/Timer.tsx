@@ -87,7 +87,7 @@ export function Timer() {
       <Button className="mt-2" onClick={() => setShouldReset(true)}>
         Reset Counters
       </Button>
-      {curFrames && lastFrames && allFrames.length > 0 && (
+      {curFrames && lastFrames && allFrames.length > 0 ? (
         <div className="mt-4 flex flex-col items-center">
           {
             <div className="flex flex-col items-center">
@@ -134,7 +134,11 @@ export function Timer() {
             </div>
           }
         </div>
-      )}
+      ) : (
+        <>
+        < br/>
+          <span className="font-bold text-red-600">ERROR: No data - Are you in game, in a non-completed save?</span>
+          </>)}
     </div>
   )
 }

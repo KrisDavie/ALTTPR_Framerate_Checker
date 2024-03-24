@@ -23,9 +23,6 @@ export const timerSlice = createSlice({
       if (state.status === "running") {
         return
       }
-      console.log(new Date(Date.now()).toString())
-      console.log(new Date(action.payload.startTS).toString())
-
       state.status = "running"
       state.startTS = action.payload.startTS
       state.offset = action.payload.offset ?? 0

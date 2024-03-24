@@ -104,7 +104,6 @@ export const sniApiSlice = createApi({
         if (!memResponse.response.response) {
           return { error: "Error reading memory, no reposonse" }
         }
-        console.log(memResponse.response.response.data)
         const frames = new Uint32Array(
           new Uint8Array([memResponse.response.response.data[0],
             memResponse.response.response.data[1],
